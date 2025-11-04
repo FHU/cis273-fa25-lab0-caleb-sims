@@ -2,16 +2,8 @@
 
 public class UnoGame
 {
-    /*
-        List<Player> Players
-List<Card> DrawStack
-List<Card> DiscardStack
-Color CurrentColor
-
-    */
-
-    public List<Player> Players { get; set; }
-    public List<Card> DrawStack { get; set; }
+    public List<Player> Players { get; set; } = new List<Player>();
+    public List<Card> DrawStack { get; set; } = new 
 
     public List<Card> DiscardStack { get; set; }
 

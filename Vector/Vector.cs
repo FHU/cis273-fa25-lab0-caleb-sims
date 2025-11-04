@@ -6,19 +6,43 @@ public struct Vector
 
     public double Y { get; set; }
 
-    public double Magnitude { get; }
+    public double Magnitude
+    {
+        get
+        {
+            return Math.Sqrt(X * X + Y * Y);
+        }
+    }
 
-    public double Direction { get; }
+    public double Direction
+    {
+        get
+        {
+            return Math.Atan2(Y, X) * 180/Math.PI;
+        }
+    }
+
+    public Vector(double x, double y)
+    {
+        X = x;
+        Y = y;
+    }
 
 
     // Instance methods 
     public Vector Add(Vector v)
     {
-        return default;
+        Vector result = new Vector();
+        result.X = this.X + v.X;
+        result.Y = this.Y + v.Y;
+        return result;
     }
     public Vector Subtract(Vector v)
     {
-        return default;
+        Vector result = new Vector();
+        result.X = this.X - v.X;
+        result.Y = this.Y - v.Y;
+        return result;
     }
     public double Dot(Vector v)
     {
@@ -47,7 +71,7 @@ public struct Vector
     // Class (static) methods 
     public static Vector Add(Vector v1, Vector v2)
     {
-        return default;
+        return v1.Add(v2);
     }
 
     public static Vector Subtract(Vector v1, Vector v2)
@@ -83,7 +107,7 @@ public struct Vector
     // Overloaded operators 
     public static Vector operator +(Vector v1, Vector v2)
     {
-        return default;
+        return v1.Add(v2);
     }
 
     public static Vector operator -(Vector v1, Vector v2)
