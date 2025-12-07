@@ -81,7 +81,8 @@ public struct Vector
 
     public static double Dot(Vector v1, Vector v2)
     {
-        return 0.0;
+        var result = v1.X * v2.X + v1.Y * v2.Y;
+        return result;
     }
 
     public static double AngleBetween(Vector v1, Vector v2)
